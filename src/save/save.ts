@@ -63,6 +63,7 @@ export class SaveBook {
     if (this.saveType.txt) {
       this.saveTxt();
     }
+    /*
     if (enableDebug.value) {
       SaveBook.saveLog();
     }
@@ -71,7 +72,7 @@ export class SaveBook {
     }
     if (this.saveType.raw instanceof Object) {
       await this.saveRaw();
-    }
+    }*/
   }
 
   private saveTxt() {
