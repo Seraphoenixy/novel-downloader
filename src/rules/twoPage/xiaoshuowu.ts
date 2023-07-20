@@ -50,7 +50,7 @@ export const xiaoshuowu = () => {
       rm(".tishi", true, content);
       rm("h1", false, content);
       rms(
-        ["(小说屋 www.xiaoshuowu.com)", "小说屋 www.xiaoshuowu.com"],
+        ["(小说屋 www.xiaoshuoge.org)", "小说屋 www.xiaoshuoge.org"],
         content
       );
       return content;

@@ -157,7 +157,7 @@ EPUB 文件请使用相应阅读器阅读。
 | [言情小说](https://www.yqxsge.cc/)                | ✅       | ❎       |                                                                                          |
 | [18 看书](https://www.18kanshu.com/)              | ✅       | ❎       |                                                                                          |
 | [笔下文学 333](http://www.bixia3.com/)            | ✅       | ❎       |                                                                                          |
-| [小说屋](http://www.xiaoshuowu.com/)              | ✅       | ❎       |                                                                                          |
+| [小说屋](http://www.xiaoshuoge.org/)              | ✅       | ❎       |                                                                                          |
 | [缤纷幻想](https://colorful-fantasybooks.com/)    | ✅       | ❎       |                                                                                          |
 | [弟子小说网](https://www.dizishu.com/xiaoshuo/)   | ✅       | ❎       |                                                                                          |
 | [新笔趣阁](https://www.ibiquge.la/)               | ✅       | ❎       |                                                                                          |

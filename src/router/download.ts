@@ -448,7 +448,7 @@ export async function getRule(): Promise<BaseRuleClass> {
       ruleClass = c18kanshu();
       break;
     }
-    case "www.xiaoshuowu.com": {
+    case "www.xiaoshuoge.org": {
       const { xiaoshuowu } = await import("../rules/twoPage/xiaoshuowu");
       ruleClass = xiaoshuowu();
       break;
