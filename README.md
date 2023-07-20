@@ -348,7 +348,7 @@ declare class saveBook {
   addChapter(chapter: Chapter): void;
   getchapterName(chapter: Chapter): string;
   genSectionText(sectionName: string): string;
-  genChapterText(chapterName: string, contentText: string): string;
+  genChapterText(sectionName: string, chapterName: string, contentText: string): string;
   genSectionHtmlFile(chapterObj: Chapter): Blob;
   genChapterHtmlFile(chapterObj: Chapter): Blob;
   chapterSort(a: Chapter, b: Chapter): 0 | 1 | -1;
@@ -401,7 +401,7 @@ txt 文档每个自然段前加两个空格
 
 ```javascript
 const saveOptions = {
-  genChapterText: (chapterName, contentText) => {
+  genChapterText: (sectionName, chapterName, contentText) => {
     contentText = contentText
       .split("\n")
       .map((line) => {

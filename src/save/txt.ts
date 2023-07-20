@@ -12,7 +12,7 @@ export class TXT extends Options {
   public constructor(book: Book, options?: SaveOptions) {
     super();
     this.book = book;
-    this.saveFileNameBase = `[${this.book.author}]${this.book.bookname}`;
+    this.saveFileNameBase = `${this.book.bookname}`;
 
     if (options) {
       Object.assign(this, options);
@@ -29,6 +29,7 @@ export class TXT extends Options {
     chapters.sort(this.chapterSort);
 
     const sections: string[] = [];
+    var sectionText = "";
     for (const chapterTemp of chapters) {
       const chapterName = this.getchapterName(chapterTemp);
       if (
@@ -36,11 +37,11 @@ export class TXT extends Options {
         !sections.includes(chapterTemp.sectionName)
       ) {
         sections.push(chapterTemp.sectionName);
-        const sectionText = this.genSectionText(chapterTemp.sectionName);
-        this.savedTextArray.push(sectionText);
+        sectionText = this.genSectionText(chapterTemp.sectionName);
       }
 
       const chapterText = this.genChapterText(
+        sectionText,
         chapterName,
         chapterTemp.contentText ?? ""
       );

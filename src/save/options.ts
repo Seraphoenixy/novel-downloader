@@ -6,18 +6,12 @@ import { Book } from "../main/Book";
 
 class Common {
   public genMetaDateTxt(book: Book) {
-    let metaDateText = `题名：${book.bookname}\n作者：${book.author}`;
-    if (book.additionalMetadate.tags) {
-      metaDateText += `\nTag列表：${book.additionalMetadate.tags.join("、")}`;
-    }
-    metaDateText += `\n原始网址：${book.bookUrl}`;
-    if (book.additionalMetadate.cover) {
-      metaDateText += `\n封面图片地址：${book.additionalMetadate.cover.url}`;
-    }
+    let metaDateText = `${book.bookname}\n作者：${book.author}`;
+    metaDateText += '\n来源：未知'
     if (book.introduction) {
-      metaDateText += `\n简介：${book.introduction}`;
+      metaDateText += `\n简介：\n${book.introduction}`;
     }
-    metaDateText += `\n下载时间：${new Date().toISOString()}\n本文件由小说下载器生成，软件地址：https://github.com/404-novel-project/novel-downloader\n\n`;
+    metaDateText += `\n\n\n\n\n`;
     return metaDateText;
   }
 
@@ -103,15 +97,23 @@ export class Options extends Common {
 
   public genSectionText(sectionName: string) {
     return (
-      `${"=".repeat(20)}\n\n\n\n# ${sectionName}\n\n\n\n${"=".repeat(20)}` +
-      "\n\n"
+      `${sectionName}`
     );
   }
 
-  public genChapterText(chapterName: string, contentText: string) {
-    return `${chapterName}\n${"=".repeat(
-      fullWidthLength(chapterName) * 2 + 10
-    )}\n\n${contentText}\n\n`;
+  public genChapterText(sectionName: string, chapterName: string, contentText: string) {
+    contentText = contentText
+    .split("\n")
+    .map((line) => {
+      if (line.trim() === "") {
+        return line;
+      } else {
+        return line.replace(/^/, "　　");
+      }
+    })
+    .join("\n");
+    contentText = contentText.replaceAll("\n\n", "\n");
+    return `${sectionName} : ${chapterName}\n\n${contentText}\n\n\n`;
   }
 
   public chapterSort(a: Chapter, b: Chapter) {

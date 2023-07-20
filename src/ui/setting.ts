@@ -61,7 +61,7 @@ export const vm = createApp({
         key: "txt_space",
         value: "txt文档每个自然段前加两个空格",
         options: {
-          genChapterText: (chapterName, contentText) => {
+          genChapterText: (sectionName, chapterName, contentText) => {
             contentText = contentText
               .split("\n")
               .map((line) => {

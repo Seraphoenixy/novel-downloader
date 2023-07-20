@@ -15,7 +15,7 @@ export class Fushuwang extends BaseRuleClass {
     this.charset = "GBK";
     this.maxRunLimit = 5;
     this.saveOptions = {
-      genChapterText: (chapterName: string, contentText: string) => {
+      genChapterText: (sectionName: string, chapterName: string, contentText: string) => {
         return `${contentText}\n`;
       },
     };
